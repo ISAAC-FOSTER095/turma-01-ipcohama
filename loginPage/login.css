@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0f1419;
+  --bg-accent: #1a2332;
+  --card: #f4efe6;
+  --ink: #1c1917;
+  --muted: #6b635a;
+  --accent: #c45c26;
+  --accent-hover: #a84c1e;
+  --field: #fffdf8;
+  --ring: rgba(196, 92, 38, 0.35);
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.box {
+  width: min(100% - 2.5rem, 22rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 2.25rem 2rem 2rem;
+  background: var(--card);
+  border-radius: 4px 4px 12px 12px;
+  border-top: 6px solid var(--accent);
+}
+
+.box h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.box input {
+  width: 100%;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--field);
+  border: 1px solid #d6cfc4;
+  border-radius: 6px;
+  padding: 0.7rem 0.85rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.box input::placeholder {
+  color: var(--muted);
+}
+
+.box input:hover {
+  border-color: #b8afA3;
+}
+
+.box input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 5px var(--ring);
+}
+
+.box button {
+  margin-top: 0.35rem;
+  width: 100%;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #fffaf5;
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+}
+
+.box button:hover {
+  background: var(--accent-hover);
+}
+
+.box button:active {
+  transform: translateY(1px);
+}
+
+.box button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.toast {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 10;
+  min-width: 16rem;
+  max-width: min(22rem, calc(100% - 2.5rem));
+  padding: 0.85rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-0.5rem);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.is-success {
+  background: #2f7d4a;
+}
+
+.toast.is-error {
+  background: #b42318;
+}
