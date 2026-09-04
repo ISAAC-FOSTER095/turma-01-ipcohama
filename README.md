@@ -1,3 +1,3 @@
 # My first README like a victory
 
-This project was created in the HTML, PYTHON, CSS, JS, and Git. 
+This project was created in the HTML, PYTHON, CSS, JS, and Git. Nights of thinking, days of training, and finally. This is a basic login page.
