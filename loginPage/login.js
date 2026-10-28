@@ -25,23 +25,23 @@ function validate() {
   const password = document.getElementById("password").value;
 
   if (username === CORRECT_USERNAME && password === CORRECT_PASSWORD){
-    showToast("Login successful.", "success");
+    showToast("Login successful. Entering game", "success");
     return true;
   }
   if (username === CORRECT && password === CORRECT_PASS) {
-    showToast("Login successful.", "success");
+    showToast("Login successful. Entering game", "success");
     return true;
   }
   if (username === CORRECT_USER && password === CORRECT_WORD) {
-    showToast("Login successful.", "success");
+    showToast("Login successful. Entering game", "success");
     return true;
   }
   if (username === USERNAME && password === PASSWORD) {
-    showToast("Login successful.", "success");
+    showToast("Login successful. Entering game", "success");
     return true;
   }
 
-  showToast("Incorrect username or password.", "error");
+  showToast("Incorrect username or password. Try again", "error");
   return false;
 }
 
